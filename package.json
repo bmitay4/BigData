@@ -1,0 +1,23 @@
+{
+  "name": "bigdata",
+  "version": "1.0.0",
+  "description": "Final project files of a big data and cloud computing course, Ariel University 2021",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bmitay4/BigData.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bmitay4/BigData/issues"
+  },
+  "homepage": "https://github.com/bmitay4/BigData#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
