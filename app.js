@@ -1,22 +1,23 @@
 const express = require('express')
 const MongoClient = require('mongodb').MongoClient;
 
-// MongoDB Details
+// MongoDB Connection Details
 const uri = "mongodb+srv://dsi:ariel2021@cluster0.lkuyv.mongodb.net/vehicles?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const app = express()
 const port = 3000
-var myobj = { name: "rina cohen", address: "TLV" }
 
 
 app.use(express.static('public'))
 app.set('view engine', 'ejs')
 
 app.get('/', (req, res) => {
-    var cards=["Borrowed","Annual Profit","Lead Conversion","Average Income",];
+    var cards=["This","Is","Just","A Test",];
   res.render("./pages/index",{cards:cards});
 })
+
+var myobj = { name: "rina cohen", address: "TLV" }
 
 // Adding a single document to mongoDB
 client.connect(err => {
