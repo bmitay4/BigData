@@ -20,6 +20,7 @@
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "mongodb": "^3.6.9"
+    "mongodb": "^3.6.9",
+    "node-rdkafka": "^2.10.1"
   }
 }
