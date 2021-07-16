@@ -59,7 +59,7 @@ var Event = ["Regular", "Holiday", "Vacation"];
 var Interchanges = [0, 1, 2, 3, 4, 5];
 
 function generateVehicle(index) {
-	let car = {
+	var car = {
 		Type: Type[Math.floor(Math.random() * Type.length)],
 		Day: Day[Math.floor(Math.random() * Day.length)],
 		Event: Event[Math.floor(Math.random() * Event.length)],
@@ -74,28 +74,26 @@ function generateVehicle(index) {
 		car["ExitInterchange"] =
 			Interchanges[Math.floor(Math.random() * Interchanges.length)];
 
-	return Buffer.from(`Vehicle #${index}\n` + JSON.stringify(car, null, 4));
+	return Buffer.from(JSON.stringify(car));
 }
 producer.on("ready", function (arg) {
-	console.log(`producer ${arg.name} ready.`);
+	console.log(`Producer ${arg.name} ready.`);
 
 	const timer = (ms) => new Promise((res) => setTimeout(res, ms));
 
 	async function load() {
 		for (var i = 1; ; i++) {
 			producer.produce(topic, -1, generateVehicle(i), i);
-			await timer(5000);
+			await timer(9000);
 		}
 	}
-
 	load();
-
 	//   setTimeout(() => producer.disconnect(), 0);
 });
 
-// producer.on("disconnected", function(arg) {
-//   process.exit();
-// });
+producer.on("disconnected", function (arg) {
+	process.exit();
+});
 
 // producer.on('event.error', function(err) {
 //   console.error(err);
@@ -104,4 +102,7 @@ producer.on("ready", function (arg) {
 // producer.on('event.log', function(log) {
 //   console.log(log);
 // });
-producer.connect();
+function runProducer() {
+	producer.connect();
+}
+module.exports = { runProducer };
