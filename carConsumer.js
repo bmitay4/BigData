@@ -49,8 +49,13 @@ consumer.on("disconnected", function (arg) {
 // consumer.on('event.log', function(log) {
 //   console.log(log);
 // });
-consumer.connect();
+
+function runConsumer() {
+	consumer.connect();
+}
 
 setTimeout(function () {
 	consumer.disconnect();
 }, 300000);
+
+module.exports = { runConsumer };

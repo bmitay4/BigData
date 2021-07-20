@@ -3,20 +3,24 @@ const app = express();
 const port = 3000;
 const producer = require("./carProducer");
 const consumer = require("./carConsumer");
+const data = require("./dataRetrieve");
+const mongo = require("./mongoDB");
+
+producer.runProducer();
+consumer.runConsumer();
 
 app.use(express.static("public"));
+app.use(express.static("public-new"));
+
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
-	var cards = ["This", "Is", "Just", "A Test"];
+	var cards = ["Daniel", "Is", "Just", "A Test"];
 	res.render("./pages/index", { cards: cards });
 });
 app.get("/temp", (req, res) => {
-	var cards = ["This", "Is", "Just", "A Test"];
-	res.render("./pages/temp", { cards: cards });
+	res.render("./pages/indexv2", {});
 });
-
-producer.runProducer();
 
 // For local running
 app.listen(port, () => {

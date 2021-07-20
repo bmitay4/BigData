@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- Basic Page Info -->
+	<meta charset="utf-8">
+	<title>Route 7 Monitor System</title>
+
+	<!-- Site favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.jpg">
+	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+		rel="stylesheet">
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="./styles/core.css">
+	<link rel="stylesheet" type="text/css" href="./styles/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="./src/plugins/datatables/css/dataTables.bootstrap4.min.css">
+	<link rel="stylesheet" type="text/css" href="./src/plugins/datatables/css/responsive.bootstrap4.min.css">
+	<link rel="stylesheet" type="text/css" href="./styles/style.css">
+</head>
+
+<body>
+	<div class="header">
+		<div class="header-left">
+			<div class="menu-icon dw dw-menu"></div>
+			<div class="header-search">
+
+				<h5 class="font-20 weight-500 mb-10 text-capitalize">
+					Route 7 - Highway Monitor System
+				</h5>
+			</div>
+		</div>
+		<div class="header-right">
+			<div class="dashboard-setting user-notification">
+				<a class="dropdown-toggle no-arrow" href="https://www.google.com/maps/" target="_blank">
+					<img src="./images/gmaps.png" alt="Google Maps">
+				</a>
+				<a class="dropdown-toggle no-arrow mr-2" href="https://www.waze.com/live-map/" target="_blank">
+					<img src="./images/waze.png" alt="Waze Live Map">
+				</a>
+			</div>
+			<div class="user-info-dropdown">
+				<div class="dropdown">
+					<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+						<span class="user-icon">
+							<img src="./images/johndoe.png" alt="">
+						</span>
+						<span class="user-name">Yossi Zaguri</span>
+					</a>
+					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+						<a class="dropdown-item" href="#"><i class="dw dw-user1"></i> Profile</a>
+						<a class="dropdown-item" href="#"><i class="dw dw-settings2"></i> Setting</a>
+						<a class="dropdown-item" href="#"><i class="dw dw-help"></i> Help</a>
+						<a class="dropdown-item" href="#"><i class="dw dw-logout"></i> Log Out</a>
+					</div>
+				</div>
+			</div>
+			<div class="github-link">
+				<a href="https://github.com/bmitay4/BigData" target="_blank"><img src="./images/github.svg" alt=""></a>
+			</div>
+		</div>
+	</div>
+	<div class="main-container">
+		<div class="pd-ltr-20">
+			<div class="row">
+				<div class="col-xl-5 mb-30">
+					<div class="card-box pd-20 height--p">
+						<div class="row align-items-center">
+							<div class="col-md-4">
+								<img src="./images/banner-img.png" alt="">
+							</div>
+							<div class="col-md-8">
+								<h5 class="font-13 weight-500 mb-10 text-capitalize">
+									Dear Manager!
+								</h5>
+								<p class="font-13">Welcome to the dashboard of Route 7</p>
+								<p>Our technical staff is available 24/7 for any malfunction or problem that arises in the system, by calling &nbsp;<i class="icon-copy fa fa-phone" aria-hidden="true"></i> * 6118 </p>
+								<p>We wish you a pleasant use of the system and have a great day &nbsp;<i class="icon-copy fa fa-smile-o" aria-hidden="true"></i></p>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-5 mb-30">
+					<div class="card-box pd-20 height-60-p">
+						<div class="row align-items-center">
+							<div id="chart8"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-2.5 mb-30">
+					<div class="card-box pd-20 height-60-p">
+						<div class="row align-items-center">
+							<div id="chart1"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xl-3 mb-30">
+					<div class="card-box height-100-p widget-style1">
+						<div class="d-flex flex-wrap align-items-center">
+							<div class="progress-data">
+								<div id="chart"></div>
+							</div>
+							<div class="widget-data">
+								<div class="h5 mb-0">2020</div>
+								<div class="weight-600 font-13">Contact</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-3 mb-30">
+					<div class="card-box height-100-p widget-style1">
+						<div class="d-flex flex-wrap align-items-center">
+							<div class="progress-data">
+								<div id="chart2"></div>
+							</div>
+							<div class="widget-data">
+								<div class="h5 mb-0">400</div>
+								<div class="weight-600 font-13">Deals</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-3 mb-30">
+					<div class="card-box height-100-p widget-style1">
+						<div class="d-flex flex-wrap align-items-center">
+							<div class="progress-data">
+								<div id="chart3"></div>
+							</div>
+							<div class="widget-data">
+								<div class="h5 mb-0">350</div>
+								<div class="weight-600 font-13">Campaign</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-3 mb-30">
+					<div class="card-box height-100-p widget-style1">
+						<div class="d-flex flex-wrap align-items-center">
+							<div class="progress-data">
+								<div id="chart4"></div>
+							</div>
+							<div class="widget-data">
+								<div class="h5 mb-0">$6060</div>
+								<div class="weight-600 font-13">Worth</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xl-8 mb-30">
+					<div class="card-box height-100-p pd-20">
+						<h2 class="h5 mb-20">Activity</h2>
+						<div id="chart5"></div>
+					</div>
+				</div>
+				<div class="col-xl-4 mb-30">
+					<div class="card-box height-100-p pd-20">
+						<h2 class="h5 mb-20">Lead Target</h2>
+						<div id="chart6"></div>
+					</div>
+				</div>
+			</div>
+			<div class="card-box mb-30">
+				<h2 class="h5 pd-20">Best Selling Products</h2>
+				<table class="data-table table nowrap">
+					<thead>
+						<tr>
+							<th class="table-plus datatable-nosort">Product</th>
+							<th>Name</th>
+							<th>Color</th>
+							<th>Size</th>
+							<th>Price</th>
+							<th>Oty</th>
+							<th class="datatable-nosort">Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="table-plus">
+								<img src="./images/product-1.jpg" width="70" height="70" alt="">
+							</td>
+							<td>
+								<h5 class="font-16">Shirt</h5>
+								by John Doe
+							</td>
+							<td>Black</td>
+							<td>M</td>
+							<td>$1000</td>
+							<td>1</td>
+							<td>
+								<div class="dropdown">
+									<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#"
+										role="button" data-toggle="dropdown">
+										<i class="dw dw-more"></i>
+									</a>
+									<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+										<a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
+										<a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>
+										<a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> Delete</a>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="table-plus">
+								<img src="./images/product-2.jpg" width="70" height="70" alt="">
+							</td>
+							<td>
+								<h5 class="font-16">Boots</h5>
+								by Lea R. Frith
+							</td>
+							<td>brown</td>
+							<td>9UK</td>
+							<td>$900</td>
+							<td>1</td>
+							<td>
+								<div class="dropdown">
+									<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#"
+										role="button" data-toggle="dropdown">
+										<i class="dw dw-more"></i>
+									</a>
+									<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+										<a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
+										<a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>
+										<a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> Delete</a>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="table-plus">
+								<img src="./images/product-3.jpg" width="70" height="70" alt="">
+							</td>
+							<td>
+								<h5 class="font-16">Hat</h5>
+								by Erik L. Richards
+							</td>
+							<td>Orange</td>
+							<td>M</td>
+							<td>$100</td>
+							<td>4</td>
+							<td>
+								<div class="dropdown">
+									<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#"
+										role="button" data-toggle="dropdown">
+										<i class="dw dw-more"></i>
+									</a>
+									<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+										<a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
+										<a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>
+										<a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> Delete</a>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="table-plus">
+								<img src="./images/product-4.jpg" width="70" height="70" alt="">
+							</td>
+							<td>
+								<h5 class="font-16">Long Dress</h5>
+								by Renee I. Hansen
+							</td>
+							<td>Gray</td>
+							<td>L</td>
+							<td>$1000</td>
+							<td>1</td>
+							<td>
+								<div class="dropdown">
+									<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#"
+										role="button" data-toggle="dropdown">
+										<i class="dw dw-more"></i>
+									</a>
+									<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+										<a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
+										<a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>
+										<a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> Delete</a>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="table-plus">
+								<img src="./images/product-5.jpg" width="70" height="70" alt="">
+							</td>
+							<td>
+								<h5 class="font-16">Blazer</h5>
+								by Vicki M. Coleman
+							</td>
+							<td>Blue</td>
+							<td>M</td>
+							<td>$1000</td>
+							<td>1</td>
+							<td>
+								<div class="dropdown">
+									<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#"
+										role="button" data-toggle="dropdown">
+										<i class="dw dw-more"></i>
+									</a>
+									<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+										<a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
+										<a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>
+										<a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> Delete</a>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="footer-wrap pd-20 mb-20 card-box"></div>
+		</div>
+	</div>
+	<!-- js -->
+	<script src="./scripts/core.js"></script>
+	<script src="./scripts/script.min.js"></script>
+	<script src="./scripts/process.js"></script>
+	<script src="./scripts/layout-settings.js"></script>
+	<script src="./src/plugins/highcharts-6.0.7/code/highcharts.js"></script>
+	<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+	<script src="./src/plugins/highcharts-6.0.7/code/highcharts-more.js"></script>
+	<script src="./scripts/highchart-setting.js"></script>
+	<script src="./src/plugins/apexcharts/apexcharts.min.js"></script>
+	<script src="./scripts/apexcharts-setting.js"></script>
+	<script src="./src/plugins/datatables/js/jquery.dataTables.min.js"></script>
+	<script src="./src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
+	<script src="./src/plugins/datatables/js/dataTables.responsive.min.js"></script>
+	<script src="./src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
+	<script src="./scripts/dashboard.js"></script>
+</body>
+
+</html>

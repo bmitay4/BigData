@@ -56,9 +56,12 @@ var Day = [
 ];
 var Type = ["Family", "Truck", "Motorcycle", "Bus", "Taxi"];
 var Event = ["Regular", "Holiday", "Vacation"];
-var Interchanges = [0, 1, 2, 3, 4, 5];
+var Interchanges = [1, 2, 3, 4, 5];
 
 function generateVehicle(index) {
+	var curretDate = new Date().toLocaleString("he-IL", {
+		timeZone: "Asia/Jerusalem",
+	});
 	var car = {
 		Type: Type[Math.floor(Math.random() * Type.length)],
 		Day: Day[Math.floor(Math.random() * Day.length)],
@@ -67,8 +70,10 @@ function generateVehicle(index) {
 			Interchanges[Math.floor(Math.random() * (Interchanges.length - 1))],
 		ExitInterchange:
 			Interchanges[Math.floor(Math.random() * Interchanges.length)],
-		Date: new Date().toLocaleDateString(),
-		Time: new Date().toLocaleTimeString(),
+		// Date: new Date().toLocaleDateString(),
+		Time: curretDate,
+		Hour: new Date().getHours(),
+		Mins: new Date().getMinutes(),
 	};
 	while (car.ExitInterchange <= car.EntranceInterchange)
 		car["ExitInterchange"] =
@@ -84,6 +89,7 @@ producer.on("ready", function (arg) {
 	async function load() {
 		for (var i = 1; ; i++) {
 			producer.produce(topic, -1, generateVehicle(i), i);
+			// console.log(generateVehicle(i));
 			await timer(9000);
 		}
 	}
@@ -102,6 +108,7 @@ producer.on("disconnected", function (arg) {
 // producer.on('event.log', function(log) {
 //   console.log(log);
 // });
+
 function runProducer() {
 	producer.connect();
 }
