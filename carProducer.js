@@ -3,18 +3,22 @@ const Kafka = require("node-rdkafka");
 const kafkaConf = {
 	"group.id": "cloudkarafka-example",
 	"metadata.broker.list":
-		"dory-01.srvs.cloudkafka.com:9094,dory-02.srvs.cloudkafka.com:9094,dory-03.srvs.cloudkafka.com:9094".split(
+		 "dory-01.srvs.cloudkafka.com:9094,dory-02.srvs.cloudkafka.com:9094,dory-03.srvs.cloudkafka.com:9094".split(	
+		//"dory-01.srvs.cloudkafka.com:9094,dory-02.srvs.cloudkafka.com:9094,dory-03.srvs.cloudkafka.com:9094".split(
 			","
 		),
 	"socket.keepalive.enable": true,
 	"security.protocol": "SASL_SSL",
 	"sasl.mechanisms": "SCRAM-SHA-256",
+	// "sasl.username": "unk5ajh7",
+	// "sasl.password": "S5M-AR23q0mg4LDMnbxAFOpp_tAhnEfA",
 	"sasl.username": "xpb25gkb",
 	"sasl.password": "67z9TtrS9KJdYb9oaQjr2TvBT9CTNOgw",
 	debug: "generic,broker,security",
 };
 
-const prefix = "xpb25gkb-";
+  const prefix = "xpb25gkb-";
+// const prefix = "unk5ajh7-";
 const topic = `${prefix}Cars`;
 const producer = new Kafka.Producer(kafkaConf);
 const maxMessages = 5;
