@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 0.1px solid royalblue;
+  border-collapse: collapse;
+  background-color: powderblue;
+  border-color: lightsalmon;
+  text-shadow: lavender;
+  
+}
+</style>
+</head>
+<body>
+
+
+
+<table style="width:100%">
+  <tr>section1</tr>
+  <tr>
+    <td><mark>Number</mark></td>
+    <td><mark>Type</mark></td>
+       <td><mark>Day</mark></td>
+        <td><mark>Event</mark></td>
+     <td><mark>Entance section</mark></td>
+    <td><mark>Exit section</mark></td>
+    <td><mark>Time</mark></td>
+
+  </tr>
+  
+ 
+  <% section1.forEach(function(car,counter){%>
+  <% counter++%>
+  <tr>
+    <td><%=counter%></td>
+    <td><%= car.Type %></td>
+    <td><%= car.Day %></td>
+    <td><%= car.Event %></td>
+    <td><%= car.EntranceInterchange %></td>
+    <td><%= car.ExitInterchange %></td>
+    <td><%= car.Time %></td>
+    
+
+
+
+  </tr>
+  <%})%>
+</table>
+ 
+<table style="width:100%">
+  <tr>
+    <td><mark>Number</mark></td>
+    <td><mark>Type</mark></td>
+       <td><mark>Day</mark></td>
+        <td><mark>Event</mark></td>
+     <td><mark>Entance section</mark></td>
+    <td><mark>Exit section</mark></td>
+    <td><mark>Time</mark></td>
+
+
+  </tr>
+  
+
+  <tr>section2</tr>
+  <% section2.forEach(function(car,counter){%>
+    <% counter++%>
+  <tr>
+    <td><%=counter%></td>
+    <td><%= car.Type %></td>
+    <td><%= car.Day %></td>
+    <td><%= car.Event %></td>
+    <td><%= car.EntranceInterchange %></td>
+    <td><%= car.ExitInterchange %></td>
+    <td><%= car.Time %></td>
+    
+
+
+
+  </tr>
+  <%})%>
+</table>
+
+<table style="width:100%">
+  <tr>
+    <td><mark>Number</mark></td>
+    <td><mark>Type</mark></td>
+       <td><mark>Day</mark></td>
+        <td><mark>Event</mark></td>
+     <td><mark>Entance section</mark></td>
+    <td><mark>Exit section</mark></td>
+    <td><mark>Time</mark></td>
+
+
+  </tr>
+  
+
+  <tr>section3</tr>
+  <% section3.forEach(function(car,counter){%>
+    <%counter++%>
+  <tr>
+    <td><%=counter%></td>
+    <td><%= car.Type %></td>
+    <td><%= car.Day %></td>
+    <td><%= car.Event %></td>
+    <td><%= car.EntranceInterchange %></td>
+    <td><%= car.ExitInterchange %></td>
+    <td><%= car.Time %></td>
+    
+
+
+
+  </tr>
+  <%})%>
+</table>
+
+<table style="width:100%">
+  <tr>
+    <td><mark>Number</mark></td>
+    <td><mark>Type</mark></td>
+       <td><mark>Day</mark></td>
+        <td><mark>Event</mark></td>
+     <td><mark>Entance section</mark></td>
+    <td><mark>Exit section</mark></td>
+    <td><mark>Time</mark></td>
+
+
+  </tr>
+  
+
+  <tr>section4</tr>
+  <% section4.forEach(function(car,counter){%>
+   <%counter++%>
+  <tr>
+    <td><%=counter%></td>
+    <td><%= car.Type %></td>
+    <td><%= car.Day %></td>
+    <td><%= car.Event %></td>
+    <td><%= car.EntranceInterchange %></td>
+    <td><%= car.ExitInterchange %></td>
+    <td><%= car.Time %></td>
+    
+
+
+
+  </tr>
+  <%})%>
+</table>
+
+</body>
+</html>
